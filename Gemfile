@@ -71,5 +71,6 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'httparty'
 gem 'sidekiq'
 gem 'sidekiq-cron'
