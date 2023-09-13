@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   mount Sidekiq::Web => '/sidekiq'
+
+  resources :weather
 end
