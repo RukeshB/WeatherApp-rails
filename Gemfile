@@ -72,5 +72,6 @@ group :test do
 end
 
 gem 'httparty'
+gem 'pagy'
 gem 'sidekiq'
 gem 'sidekiq-cron'
