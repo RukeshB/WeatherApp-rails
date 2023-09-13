@@ -22,15 +22,16 @@ class WeatherDataFetcherJob
       WeatherReport.create(
         lon: weather_data['coord']['lon'],
         lat: weather_data['coord']['lat'],
-        weather: '',
-        description: '',
+        weather: weather_data['weather'].first['main'],
+        description: weather_data['weather'].first['description'],
         temp: weather_data['main']['temp'],
         temp_min: weather_data['main']['temp_min'],
         temp_max: weather_data['main']['temp_max'],
         pressure: weather_data['main']['pressure'],
         humidity: weather_data['main']['humidity'],
         wind_speed: weather_data['wind']['speed'],
-        wind_deg: weather_data['wind']['deg']
+        wind_deg: weather_data['wind']['deg'],
+        loaction: weather_data['name']
       )
     else
       # Handle API request errors
