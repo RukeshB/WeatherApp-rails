@@ -1,0 +1,7 @@
+# config/schedule.yml
+
+weather_data_fetcher:
+  cron: '0 * * * *'
+  class: 'WeatherDataFetcherJob'
+  queue: default
+  description: 'Fetch weather data from OpenWeatherMap API'
