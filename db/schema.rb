@@ -10,25 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_13_042745) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_11_165859) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "weather_reports", force: :cascade do |t|
+  create_table "locations", force: :cascade do |t|
     t.decimal "lon", precision: 10, scale: 2
     t.decimal "lat", precision: 10, scale: 2
-    t.decimal "temp", precision: 10, scale: 2
+    t.string "city", null: false
+    t.string "country", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "weather_reports", force: :cascade do |t|
+    t.decimal "temp", precision: 10, scale: 2, null: false
     t.decimal "temp_min", precision: 10, scale: 2
     t.decimal "temp_max", precision: 10, scale: 2
     t.decimal "pressure", precision: 10, scale: 2
     t.decimal "humidity", precision: 10, scale: 2
-    t.decimal "wind_speed", precision: 10, scale: 2
-    t.decimal "wind_deg", precision: 10, scale: 2
-    t.string "weather"
-    t.string "description"
+    t.json "wind"
+    t.string "weather", null: false
+    t.string "description", null: false
+    t.bigint "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "loaction"
+    t.index ["location_id"], name: "index_weather_reports_on_location_id"
   end
 
 end
