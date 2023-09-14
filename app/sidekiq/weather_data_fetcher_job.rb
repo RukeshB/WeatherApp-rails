@@ -18,10 +18,18 @@ class WeatherDataFetcherJob
       # Parse the JSON response and extract the data
       weather_data = JSON.parse(response.body)
 
-      # save the weather data to database
-      WeatherReport.create(
+      # save the location data to database
+      location_attributes = {
+        city: weather_data['name'],
+        country: weather_data['sys']['country'],
         lon: weather_data['coord']['lon'],
-        lat: weather_data['coord']['lat'],
+        lat: weather_data['coord']['lat']
+      }
+
+      location = Location.find_or_create_by(location_attributes)
+
+      # save the weather data to database
+      weather_attributes = {
         weather: weather_data['weather'].first['main'],
         description: weather_data['weather'].first['description'],
         temp: weather_data['main']['temp'],
@@ -29,10 +37,12 @@ class WeatherDataFetcherJob
         temp_max: weather_data['main']['temp_max'],
         pressure: weather_data['main']['pressure'],
         humidity: weather_data['main']['humidity'],
-        wind_speed: weather_data['wind']['speed'],
-        wind_deg: weather_data['wind']['deg'],
-        loaction: weather_data['name']
-      )
+        wind: weather_data['wind'],
+        location:
+      }
+
+      WeatherReport.create(weather_attributes)
+
     else
       # Handle API request errors
       Rails.logger.error("Failed to fetch weather data: #{response.code} - #{response.message}")
