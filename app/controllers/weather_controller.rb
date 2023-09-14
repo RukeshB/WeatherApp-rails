@@ -6,7 +6,9 @@ class WeatherController < ApplicationController
       format.html # show.html.erb
       format.json do
         render json: {
-          data: @weather,
+          data: ActiveModel::Serializer::CollectionSerializer.new(
+            @weather, serializer: WeatherReportSerializer
+          ),
           pagy: @pagy
         }
       end
