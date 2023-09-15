@@ -1,5 +1,7 @@
 require 'rails_helper'
 
+# run this command to test rspec spec/models/location_spec.rb -f d
+
 RSpec.describe Location, type: :model do
   let(:location) { create(:location) }
 
