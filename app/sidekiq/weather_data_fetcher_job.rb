@@ -15,7 +15,7 @@ class WeatherDataFetcherJob
                               })
 
       unless response.code == 200
-        raise StandardError, "Failed to fetch weather data: #{response.code} - #{response.message}"
+        raise StandardError, "Failed to fetch weather data: #{response.code}"
       end
 
       weather_data = JSON.parse(response.body)
