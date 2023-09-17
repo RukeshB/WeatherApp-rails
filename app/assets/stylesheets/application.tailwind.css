@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @layer components {
+  .table {
+    @apply w-full text-sm text-left text-gray-500;
+  }
+} */

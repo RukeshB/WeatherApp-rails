@@ -81,3 +81,5 @@ gem 'httparty'
 gem 'pagy'
 gem 'sidekiq'
 gem 'sidekiq-cron'
+
+gem 'tailwindcss-rails', '~> 2.0'
