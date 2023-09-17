@@ -28,7 +28,7 @@ weather report
 params : 
 items : number of data in each page , page : page number
 
-URL : /weather - header : { Accept : application/json }
+Route: /weather - header : { Accept : application/json }
 or
 /weather.json
 
@@ -37,7 +37,7 @@ or
 ### view
 weather report
 ---------------
-/weather
+Route: /weather
 
 
 ### Testing
