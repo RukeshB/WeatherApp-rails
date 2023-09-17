@@ -1,0 +1,38 @@
+<div class="relative overflow-x-auto w-full">
+  <table class="w-full text-sm text-left text-gray-500">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+      <tr>
+        <th scope="col" class="px-6 py-3">Date Time</th>
+        <th scope="col" class="px-6 py-3">weather</th>
+        <th scope="col" class="px-6 py-3">description</th>
+        <th scope="col" class="px-6 py-3">temp</th>
+        <th scope="col" class="px-6 py-3">temp_min</th>
+        <th scope="col" class="px-6 py-3">temp_max</th>
+        <th scope="col" class="px-6 py-3">pressure</th>
+        <th scope="col" class="px-6 py-3">humidity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @weather.each_with_index do |element, index| %>
+      <tr class="bg-white border-b">
+        <th
+          scope="row"
+          class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+        >
+          <%= format_date_time(element.created_at)%>
+        </th>
+        <td class="px-6 py-4"><%= element.weather%></td>
+        <td class="px-6 py-4"><%= element.description%></td>
+        <td class="px-6 py-4"><%= element.temp%></td>
+        <td class="px-6 py-4"><%= element.temp_min%></td>
+        <td class="px-6 py-4"><%= element.temp_max%></td>
+        <td class="px-6 py-4"><%= element.pressure%></td>
+        <td class="px-6 py-4"><%= element.humidity%></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="w-full flex justify-center items-center">
+    <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+  </div>
+</div>
