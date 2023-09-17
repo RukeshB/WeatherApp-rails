@@ -12,6 +12,12 @@ bundle exec rails db:create
 
 bundle exec rails db:migrate
 
+### Rails credentials
+EDITOR=nano rails credentials:edit
+and enter following 
+openweathermap:
+ api_key: b7aef3568e4ecac4c88469f2789d2992
+
 ### Run Server
 
 rails s
