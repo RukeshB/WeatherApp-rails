@@ -1,24 +1,48 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
 
-Things you may want to cover:
+### Bundle to Install RubyGems
 
-* Ruby version
+bundle install
 
-* System dependencies
+### Database (PostgreSQL)
 
-* Configuration
+bundle exec rails db:create
 
-* Database creation
+bundle exec rails db:migrate
 
-* Database initialization
+### Run Server
 
-* How to run the test suite
+rails s
 
-* Services (job queues, cache servers, search engines, etc.)
+### Run Sidkeiq
 
-* Deployment instructions
+bundle exec sidekiq
 
-* ...
+* sidekiq ui : /sidekiq
+
+### API
+weather report
+---------------
+params : 
+items : number of data in each page , page : page number
+
+Route: /weather - header : { Accept : application/json }
+or
+/weather.json
+
+* eg with params : /weather.json?page=1&items=5
+
+### view
+weather report
+---------------
+Route: /weather
+
+
+### Testing
+
+* location model : rspec spec/models/location_spec.rb -f d
+* weather report model : rspec spec/models/weather_report_spec.rb -f d
+* weather report api : rspec spec/request/weather_controller_spec.rb -f d
+* sidekiq job : rspec spec/sidekiq/weather_data_fetcher_job_test.rb -f d
