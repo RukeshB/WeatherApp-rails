@@ -20,7 +20,7 @@ rails s
 
 bundle exec sidekiq
 
-* sidekiq ui : /sidekiq
+* sidekiq ui: /sidekiq
 
 ### API
 weather report
@@ -37,8 +37,14 @@ or
 ### view
 weather report
 ---------------
+Recent Weather
+Routes: /
+
+All Weather
 Route: /weather
 
+### Build your Tailwind CSS
+rails tailwindcss:build
 
 ### Testing
 
