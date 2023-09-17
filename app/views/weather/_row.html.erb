@@ -1,0 +1,15 @@
+<tr class="bg-white border-b">
+    <th
+      scope="row"
+      class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+    >
+      <%= format_date_time(element.created_at)%>
+    </th>
+    <td class="px-6 py-4"><%= element.weather%></td>
+    <td class="px-6 py-4"><%= element.description%></td>
+    <td class="px-6 py-4"><%= element.temp%></td>
+    <td class="px-6 py-4"><%= element.temp_min%></td>
+    <td class="px-6 py-4"><%= element.temp_max%></td>
+    <td class="px-6 py-4"><%= element.pressure%></td>
+    <td class="px-6 py-4"><%= element.humidity%></td>
+  </tr>
