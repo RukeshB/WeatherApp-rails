@@ -1,6 +1,8 @@
 class WeatherController < ApplicationController
   def index
-    @pagy, @weather = pagy(WeatherReport.all, items: params[:items])
+    items = params[:items]
+    items ||= 10
+    @pagy, @weather = pagy(WeatherReport.all, items: items)
 
     respond_to do |format|
       format.html # show.html.erb
