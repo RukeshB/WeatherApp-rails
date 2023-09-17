@@ -22,12 +22,13 @@ bundle exec sidekiq
 
 * sidekiq ui : /sidekiq
 
-### api
+### API
 weather report
 ---------------
-params : items : number of data in each page , page : page number
+params : 
+items : number of data in each page , page : page number
 
-/weather - header : { Accept : application/json }
+URL : /weather - header : { Accept : application/json }
 or
 /weather.json
 
