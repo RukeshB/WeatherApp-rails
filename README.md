@@ -21,7 +21,7 @@ openweathermap:
 
  api_key: b7aef3568e4ecac4c88469f2789d2992
 
-or copy and paste correct master key 
+or copy and paste the correct master key inside "project_folder/config"
 
 ### Run Server
 
