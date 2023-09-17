@@ -2,10 +2,10 @@ class WeatherController < ApplicationController
   def index
     items = params[:items]
     items ||= 10
-    @pagy, @weather = pagy(WeatherReport.all, items: items)
+    @pagy, @weather = pagy(WeatherReport.all, items:)
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.json do
         render json: {
           data: ActiveModel::Serializer::CollectionSerializer.new(
@@ -15,5 +15,9 @@ class WeatherController < ApplicationController
         }
       end
     end
+  end
+
+  def show
+    @weather = WeatherReport.last  # get latest data
   end
 end
