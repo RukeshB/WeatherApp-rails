@@ -13,15 +13,19 @@ bundle exec rails db:create
 bundle exec rails db:migrate
 
 ### Rails credentials
-EDITOR=nano rails credentials:edit
+1. run command EDITOR=nano rails credentials:edit
 
-and enter following 
+2. paste the following in rails credentials
 
 openweathermap:
 
  api_key: b7aef3568e4ecac4c88469f2789d2992
 
-or copy and paste the correct master key inside "project_folder/config"
+* or copy and paste the correct master key inside "project_folder/config"
+
+it should look like this
+![image](https://github.com/RukeshB/WeatherApp-rails/assets/31877424/d94a2d3e-4d63-400a-a027-31efc81ff090)
+
 
 ### Run Server
 
