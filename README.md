@@ -23,6 +23,12 @@ openweathermap:
 
 * or copy and paste the correct master key inside "project_folder/config"
 
+EDITOR might be different, some of the other EDITOR are:
+* EDITOR=vim
+* EDITOR=code
+* EDITOR=sublime
+* EDITOR=atom
+
 it should look like this
 ![image](https://github.com/RukeshB/WeatherApp-rails/assets/31877424/d94a2d3e-4d63-400a-a027-31efc81ff090)
 
